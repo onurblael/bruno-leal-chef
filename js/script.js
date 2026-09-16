@@ -5,6 +5,25 @@
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  /* ---------- Modo claro / escuro ---------- */
+  var themeToggle = document.getElementById('theme-toggle');
+  function getStoredTheme(){
+    try { return localStorage.getItem('site-theme'); } catch(e) { return null; }
+  }
+  function applyTheme(theme){
+    document.documentElement.setAttribute('data-theme', theme);
+    try { localStorage.setItem('site-theme', theme); } catch(e) {}
+    if (themeToggle) themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+  }
+  var initialTheme = getStoredTheme() || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  applyTheme(initialTheme);
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function(){
+      var current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      applyTheme(current === 'dark' ? 'light' : 'dark');
+    });
+  }
+
   /* ---------- Menu mobile ---------- */
   var navToggle = document.getElementById('nav-toggle');
   var mainNav = document.getElementById('main-nav');
