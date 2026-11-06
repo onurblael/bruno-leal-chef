@@ -191,7 +191,7 @@
       "form.enviar": "Enviar Pedido",
       "form.enviando": "A enviar...",
       "form.sucesso": "Pedido enviado com sucesso! Entrarei em contacto em breve.",
-      "form.erro": "Não foi possível enviar. Tente novamente ou contacte-me diretamente por email/WhatsApp.",
+      "form.erro": "Não foi possível enviar. Tente novamente ou fale comigo diretamente: <a href=\"https://wa.me/351966794420\" target=\"_blank\" rel=\"noopener\">WhatsApp</a> · <a href=\"mailto:elxconsult.club@gmail.com\">email</a>.",
 
       "footer.text": "© <span id=\"year\"></span> Bruno Miguel Vieira Leal — Chef Consultor. Alto Alentejo, Portugal.",
       "footer.top": "Voltar ao topo ↑"
@@ -347,7 +347,7 @@
       "form.enviar": "Enviar Solicitud",
       "form.enviando": "Enviando...",
       "form.sucesso": "¡Solicitud enviada con éxito! Me pondré en contacto en breve.",
-      "form.erro": "No se pudo enviar. Inténtelo de nuevo o contácteme directamente por email/WhatsApp.",
+      "form.erro": "No se pudo enviar. Inténtelo de nuevo o hable conmigo directamente: <a href=\"https://wa.me/351966794420\" target=\"_blank\" rel=\"noopener\">WhatsApp</a> · <a href=\"mailto:elxconsult.club@gmail.com\">email</a>.",
 
       "footer.text": "© <span id=\"year\"></span> Bruno Miguel Vieira Leal — Chef Consultor. Alto Alentejo, Portugal.",
       "footer.top": "Volver arriba ↑"
@@ -415,12 +415,12 @@
           status.className = 'form-status is-success';
           form.reset();
         } else {
-          status.textContent = d['form.erro'];
+          status.innerHTML = d['form.erro'];
           status.className = 'form-status is-error';
         }
       })
       .catch(function(){
-        status.textContent = d['form.erro'];
+        status.innerHTML = d['form.erro'];
         status.className = 'form-status is-error';
       })
       .finally(function(){

@@ -385,6 +385,7 @@ img.photo-hero, img.photo-square, img.photo-case{
 .form-status{ margin:12px 0 0; font-size:0.88rem; min-height:1.2em; }
 .form-status.is-success{ color:var(--oliva); font-weight:700; }
 .form-status.is-error{ color:var(--terracota); font-weight:700; }
+.form-status a{ color:inherit; text-decoration:underline; text-underline-offset:2px; }
 
 /* ---------- Footer ---------- */
 .site-footer{ border-top:1px solid var(--line); padding-block:24px; }
