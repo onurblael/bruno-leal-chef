@@ -92,7 +92,7 @@
       "servicos.privado.i2": "Menu de degustação personalizado para o seu grupo",
       "servicos.privado.i3": "Compras, confeção e serviço à mesa incluídos",
       "servicos.privado.i4": "Ideal para celebrações e jantares em família",
-      "servicos.privado.price": "€33",
+      "servicos.privado.price": "€29",
       "servicos.privado.unit": "/ pessoa · mín. 6",
 
       "servicos.consultor.title": "Chef Consultor",
@@ -247,7 +247,7 @@
       "servicos.privado.i2": "Menú degustación personalizado para su grupo",
       "servicos.privado.i3": "Compra, elaboración y servicio de mesa incluidos",
       "servicos.privado.i4": "Ideal para celebraciones y cenas familiares",
-      "servicos.privado.price": "33€",
+      "servicos.privado.price": "29€",
       "servicos.privado.unit": "/ persona · mín. 6",
 
       "servicos.consultor.title": "Chef Consultor",
