@@ -4,6 +4,18 @@
    Tipografia: Fraunces (títulos) + Karla (corpo)
    ========================================================================== */
 
+/* Fontes alojadas no próprio site (Fraunces e Karla, licença SIL OFL), sem pedidos à Google */
+@font-face{
+  font-family:'Fraunces'; font-style:normal; font-weight:300 700; font-display:swap;
+  src:url('../fonts/fraunces-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face{
+  font-family:'Karla'; font-style:normal; font-weight:400 700; font-display:swap;
+  src:url('../fonts/karla-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
 :root{
   --bg:#F7F1E6;
   --bg-alt:#EDE3CF;
@@ -382,10 +394,29 @@ img.photo-hero, img.photo-square, img.photo-case{
   outline:none; border-color:var(--terracota);
 }
 .hp-field{ position:absolute; left:-9999px; }
+.form-consent{
+  display:flex; gap:10px; align-items:flex-start; margin-bottom:16px;
+  font-size:0.85rem; line-height:1.5; color:var(--ink-muted); cursor:pointer;
+}
+.form-consent input{ flex-shrink:0; width:18px; height:18px; margin-top:2px; accent-color:var(--terracota); }
+.form-consent a{ color:var(--terracota); text-underline-offset:2px; }
 .form-status{ margin:12px 0 0; font-size:0.88rem; min-height:1.2em; }
 .form-status.is-success{ color:var(--oliva); font-weight:700; }
 .form-status.is-error{ color:var(--terracota); font-weight:700; }
 .form-status a{ color:inherit; text-decoration:underline; text-underline-offset:2px; }
+
+/* ---------- Páginas legais ---------- */
+.legal{ max-width:760px; }
+.legal h1{ font-size:clamp(1.9rem, 5vw, 2.6rem); margin-bottom:6px; }
+.legal h2{ font-size:1.25rem; margin:36px 0 10px; }
+.legal p, .legal li{ color:var(--ink-muted); line-height:1.75; }
+.legal strong{ color:var(--ink); }
+.legal ul{ padding-left:22px; margin:0 0 1em; display:flex; flex-direction:column; gap:6px; }
+.legal a{ color:var(--terracota); text-underline-offset:2px; }
+.legal-date{ font-size:0.85rem; margin-bottom:8px; }
+.lang-es{ display:none; }
+html[lang^="es"] .lang-pt{ display:none; }
+html[lang^="es"] .lang-es{ display:block; }
 
 /* ---------- Footer ---------- */
 .site-footer{ border-top:1px solid var(--line); padding-block:24px; }
@@ -394,5 +425,6 @@ img.photo-hero, img.photo-square, img.photo-case{
   font-size:0.85rem; color:var(--ink-muted);
 }
 @media (min-width:640px){ .footer-inner{ flex-direction:row; justify-content:space-between; } }
+.footer-links{ display:flex; flex-wrap:wrap; gap:6px 22px; justify-content:center; }
 .back-top{ text-decoration:none; font-weight:700; color:var(--ink-muted); }
 .back-top:hover{ color:var(--terracota); }

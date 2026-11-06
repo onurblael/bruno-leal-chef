@@ -194,7 +194,10 @@
       "form.erro": "Não foi possível enviar. Tente novamente ou fale comigo diretamente: <a href=\"https://wa.me/351966794420\" target=\"_blank\" rel=\"noopener\">WhatsApp</a> · <a href=\"mailto:elxconsult.club@gmail.com\">email</a>.",
 
       "footer.text": "© <span id=\"year\"></span> Bruno Miguel Vieira Leal — Chef Consultor. Alto Alentejo, Portugal.",
-      "footer.top": "Voltar ao topo ↑"
+      "footer.top": "Voltar ao topo ↑",
+      "footer.privacy": "Política de Privacidade",
+      "priv.back": "← Voltar ao site",
+      "form.consent": "Aceito que os meus dados sejam usados para responder a este pedido, de acordo com a <a href=\"privacidade.html\">Política de Privacidade</a>."
     },
 
     es: {
@@ -350,7 +353,10 @@
       "form.erro": "No se pudo enviar. Inténtelo de nuevo o hable conmigo directamente: <a href=\"https://wa.me/351966794420\" target=\"_blank\" rel=\"noopener\">WhatsApp</a> · <a href=\"mailto:elxconsult.club@gmail.com\">email</a>.",
 
       "footer.text": "© <span id=\"year\"></span> Bruno Miguel Vieira Leal — Chef Consultor. Alto Alentejo, Portugal.",
-      "footer.top": "Volver arriba ↑"
+      "footer.top": "Volver arriba ↑",
+      "footer.privacy": "Política de Privacidad",
+      "priv.back": "← Volver al sitio",
+      "form.consent": "Acepto que mis datos se utilicen para responder a esta solicitud, de acuerdo con la <a href=\"privacidade.html\">Política de Privacidad</a>."
     }
   };
 
