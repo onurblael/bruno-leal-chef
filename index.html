@@ -32,19 +32,81 @@
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
+  "@id": "https://onurblael.github.io/bruno-leal-chef/#negocio",
   "name": "Bruno Leal — Chef Consultor",
+  "url": "https://onurblael.github.io/bruno-leal-chef/",
   "image": "https://onurblael.github.io/bruno-leal-chef/images/og-cover.jpg",
-  "description": "Consultoria gastronómica: desenvolvimento de conceitos de restaurante, engenharia de menus, fichas técnicas e abertura de unidades no Alentejo.",
+  "description": "Chef consultor no Alto Alentejo: desenvolvimento de conceitos de restaurante, engenharia de menus, fichas técnicas, consultoria de abertura, chef privado e reforço de cozinha.",
   "telephone": "+351966794420",
   "email": "elxconsult.club@gmail.com",
-  "areaServed": ["Elvas", "Campo Maior", "Alto Alentejo", "Badajoz"],
+  "founder": {
+    "@type": "Person",
+    "name": "Bruno Miguel Vieira Leal",
+    "jobTitle": "Chef Consultor"
+  },
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Elvas",
-    "addressRegion": "Alto Alentejo",
+    "addressRegion": "Portalegre",
     "addressCountry": "PT"
   },
-  "priceRange": "€€"
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Elvas"
+    },
+    {
+      "@type": "City",
+      "name": "Campo Maior"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Alto Alentejo"
+    },
+    {
+      "@type": "City",
+      "name": "Badajoz"
+    }
+  ],
+  "priceRange": "€€",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Serviços",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Chef para restaurantes",
+          "description": "Direção e liderança da cozinha, ementas sazonais, gestão de equipa, stock e controlo de desperdício."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Chef privado / particular",
+          "description": "Jantares privados em casa ou espaço próprio, com menu de degustação personalizado, compras, confeção e serviço à mesa."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Chef consultor",
+          "description": "Desenvolvimento de conceito, engenharia de menus, fichas técnicas, controlo de custos e consultoria de abertura de unidades."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cozinheiro",
+          "description": "Reforço de equipa em picos de serviço, substituições pontuais e formação de equipa de cozinha."
+        }
+      }
+    ]
+  }
 }
 </script>
 </head>

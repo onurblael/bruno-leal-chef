@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://onurblael.github.io/bruno-leal-chef/sitemap.xml
