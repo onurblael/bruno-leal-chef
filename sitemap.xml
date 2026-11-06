@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://onurblael.github.io/bruno-leal-chef/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://onurblael.github.io/bruno-leal-chef/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://onurblael.github.io/bruno-leal-chef/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onurblael.github.io/bruno-leal-chef/"/>
+  </url>
+  <url>
+    <loc>https://onurblael.github.io/bruno-leal-chef/es/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://onurblael.github.io/bruno-leal-chef/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://onurblael.github.io/bruno-leal-chef/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onurblael.github.io/bruno-leal-chef/"/>
   </url>
   <url>
     <loc>https://onurblael.github.io/bruno-leal-chef/privacidade.html</loc>

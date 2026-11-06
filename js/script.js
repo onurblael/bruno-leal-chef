@@ -438,6 +438,9 @@
     var y = document.getElementById('year');
     if (y) y.textContent = new Date().getFullYear();
     updateWhatsApp(lang);
+    document.querySelectorAll('[data-home]').forEach(function(a){
+      a.setAttribute('href', lang === 'es' ? 'es/' : 'index.html');
+    });
   }
 
   /* ---------- WhatsApp: mensagem pré-preenchida conforme o serviço ---------- */
@@ -452,13 +455,27 @@
     links.forEach(function(a){ a.setAttribute('href', url); });
   }
 
+  /* Idioma: nas páginas principais (/ e /es/) vem do próprio documento e o seletor é uma ligação
+     para a outra versão; só a política de privacidade (página única bilingue) troca o texto aqui. */
   var langToggle = document.getElementById('lang-toggle');
-  var currentLang = 'pt';
-  try { currentLang = localStorage.getItem('site-lang') || 'pt'; } catch(e) {}
-  if (currentLang !== 'pt') applyLang(currentLang);
+  var pageLang = document.documentElement.lang.indexOf('es') === 0 ? 'es' : 'pt';
+  var toggleIsLink = !!(langToggle && langToggle.tagName === 'A');
+  var currentLang = pageLang;
+
+  if (!toggleIsLink) {
+    var fromQuery = null, fromStorage = null;
+    try { fromQuery = new URLSearchParams(location.search).get('lang'); } catch(e) {}
+    try { fromStorage = localStorage.getItem('site-lang'); } catch(e) {}
+    currentLang = (fromQuery === 'es' || fromQuery === 'pt') ? fromQuery : (fromStorage || 'pt');
+    if (currentLang !== 'pt') applyLang(currentLang);
+  }
 
   if (langToggle) {
     langToggle.addEventListener('click', function(){
+      if (toggleIsLink) {
+        try { localStorage.setItem('site-lang', pageLang === 'pt' ? 'es' : 'pt'); } catch(e) {}
+        return;
+      }
       currentLang = currentLang === 'pt' ? 'es' : 'pt';
       applyLang(currentLang);
     });
