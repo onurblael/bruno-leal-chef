@@ -197,6 +197,8 @@
       "footer.top": "Voltar ao topo ↑",
       "footer.privacy": "Política de Privacidade",
       "priv.back": "← Voltar ao site",
+      "wa.msg": "Olá Bruno, vi o seu site e gostava de pedir um orçamento.",
+      "wa.msgService": "Olá Bruno, vi o seu site e gostava de pedir um orçamento: {service}.",
       "form.consent": "Aceito que os meus dados sejam usados para responder a este pedido, de acordo com a <a href=\"privacidade.html\">Política de Privacidade</a>."
     },
 
@@ -356,6 +358,8 @@
       "footer.top": "Volver arriba ↑",
       "footer.privacy": "Política de Privacidad",
       "priv.back": "← Volver al sitio",
+      "wa.msg": "Hola Bruno, he visto su web y me gustaría pedir un presupuesto.",
+      "wa.msgService": "Hola Bruno, he visto su web y me gustaría pedir un presupuesto: {service}.",
       "form.consent": "Acepto que mis datos se utilicen para responder a esta solicitud, de acuerdo con la <a href=\"privacidade.html\">Política de Privacidad</a>."
     }
   };
@@ -377,6 +381,19 @@
     // ano tem de ser reposto pois innerHTML do footer é substituído
     var y = document.getElementById('year');
     if (y) y.textContent = new Date().getFullYear();
+    updateWhatsApp(lang);
+  }
+
+  /* ---------- WhatsApp: mensagem pré-preenchida conforme o serviço ---------- */
+  function updateWhatsApp(lang){
+    var links = document.querySelectorAll('.js-wa');
+    if (!links.length) return;
+    var d = dict[lang] || dict.pt;
+    var sel = document.getElementById('servico');
+    var label = (sel && sel.value) ? sel.options[sel.selectedIndex].text : '';
+    var text = label ? d['wa.msgService'].replace('{service}', label) : d['wa.msg'];
+    var url = 'https://wa.me/351966794420?text=' + encodeURIComponent(text);
+    links.forEach(function(a){ a.setAttribute('href', url); });
   }
 
   var langToggle = document.getElementById('lang-toggle');
@@ -389,6 +406,39 @@
       currentLang = currentLang === 'pt' ? 'es' : 'pt';
       applyLang(currentLang);
     });
+  }
+
+  /* ---------- "Pedir orçamento" escolhe o serviço no formulário ---------- */
+  var serviceSelect = document.getElementById('servico');
+  document.querySelectorAll('[data-service]').forEach(function(a){
+    a.addEventListener('click', function(){
+      if (serviceSelect) {
+        serviceSelect.value = a.getAttribute('data-service');
+        updateWhatsApp(currentLang);
+      }
+    });
+  });
+  if (serviceSelect) {
+    serviceSelect.addEventListener('change', function(){ updateWhatsApp(currentLang); });
+  }
+  updateWhatsApp(currentLang);
+
+  /* ---------- Botão flutuante de WhatsApp: esconde-se junto ao contacto e ao rodapé ---------- */
+  var waFloat = document.getElementById('wa-float');
+  if (waFloat) {
+    var waHideTargets = [document.getElementById('contacto'), document.querySelector('.site-footer')].filter(Boolean);
+    var checkWaFloat = function(){
+      var vh = window.innerHeight;
+      var hide = waHideTargets.some(function(t){
+        var r = t.getBoundingClientRect();
+        var overlap = Math.min(r.bottom, vh) - Math.max(r.top, 0);
+        return overlap > Math.min(120, r.height * 0.5);
+      });
+      waFloat.classList.toggle('is-hidden', hide);
+    };
+    window.addEventListener('scroll', checkWaFloat, { passive: true });
+    window.addEventListener('resize', checkWaFloat);
+    checkWaFloat();
   }
 
   /* ---------- Formulário de contacto (Web3Forms) ---------- */

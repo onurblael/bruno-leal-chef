@@ -26,7 +26,7 @@
 <link rel="preload" href="fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/karla-latin.woff2" as="font" type="font/woff2" crossorigin>
 
-<link rel="stylesheet" href="css/style.css?v=9">
+<link rel="stylesheet" href="css/style.css?v=10">
 
 <script type="application/ld+json">
 {
@@ -148,7 +148,7 @@
               <span class="price-unit" data-i18n="servicos.chef.unitHora">/ hora</span>
             </div>
           </div>
-          <a href="#contacto" class="btn btn-secondary btn-small" data-i18n="servicos.ctaBtn">Pedir orçamento</a>
+          <a href="#contacto" data-service="Chef - Restaurante" class="btn btn-secondary btn-small" data-i18n="servicos.ctaBtn">Pedir orçamento</a>
         </article>
 
         <article class="price-card">
@@ -166,7 +166,7 @@
             <span class="price-value" data-i18n="servicos.privado.price">€29</span>
             <span class="price-unit" data-i18n="servicos.privado.unit">/ pessoa · mín. 6</span>
           </div>
-          <a href="#contacto" class="btn btn-secondary btn-small" data-i18n="servicos.ctaBtn">Pedir orçamento</a>
+          <a href="#contacto" data-service="Chef Privado - Jantar" class="btn btn-secondary btn-small" data-i18n="servicos.ctaBtn">Pedir orçamento</a>
         </article>
 
         <article class="price-card price-card-featured">
@@ -185,7 +185,7 @@
             <span class="price-value" data-i18n="servicos.consultor.price">€800</span>
             <span class="price-unit" data-i18n="servicos.consultor.unit">/ projeto, a partir de</span>
           </div>
-          <a href="#contacto" class="btn btn-primary btn-small" data-i18n="servicos.ctaBtn">Pedir orçamento</a>
+          <a href="#contacto" data-service="Chef Consultor" class="btn btn-primary btn-small" data-i18n="servicos.ctaBtn">Pedir orçamento</a>
         </article>
 
         <article class="price-card">
@@ -208,7 +208,7 @@
               <span class="price-unit" data-i18n="servicos.cozinheiro.unitHora">/ hora</span>
             </div>
           </div>
-          <a href="#contacto" class="btn btn-secondary btn-small" data-i18n="servicos.ctaBtn">Pedir orçamento</a>
+          <a href="#contacto" data-service="Cozinheiro" class="btn btn-secondary btn-small" data-i18n="servicos.ctaBtn">Pedir orçamento</a>
         </article>
 
       </div>
@@ -387,7 +387,7 @@
           </li>
         </ul>
 
-        <a class="btn btn-whatsapp" href="https://wa.me/351966794420" target="_blank" rel="noopener">
+        <a class="btn btn-whatsapp js-wa" href="https://wa.me/351966794420" target="_blank" rel="noopener">
           <span class="wa-icon" aria-hidden="true">✆</span>
           <span data-i18n="contacto.whatsapp">Falar no WhatsApp</span>
         </a>
@@ -452,6 +452,11 @@
   </div>
 </footer>
 
-<script src="js/script.js?v=14"></script>
+<a class="wa-float js-wa" id="wa-float" href="https://wa.me/351966794420" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <span class="wa-icon" aria-hidden="true">✆</span>
+  <span data-i18n="contacto.whatsapp">Falar no WhatsApp</span>
+</a>
+
+<script src="js/script.js?v=16"></script>
 </body>
 </html>
